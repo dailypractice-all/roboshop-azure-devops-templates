@@ -1,5 +1,5 @@
 stages:
-  - stage: Downloadingdependenciesandbuilding${COMPONENT}image
+  - stage: CI
     jobs:
       - job: CIWork
         steps:
