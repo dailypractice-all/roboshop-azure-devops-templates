@@ -1,12 +1,12 @@
 stages:
-  - stage: CI
-    jobs:
-      - job: CIWork
-        steps:
-          - script: npm install
-            displayName: 'Download Nodejs Dependencies'
-          - script: docker build -t ${COMPONENT} .
-            displayName: 'Docker build ${COMPONENT} image'
+- stage: CI
+  jobs:
+  - job: CI
+    steps:
+    - script: npm install
+      displayName: 'Download Nodejs Dependencies'
+    - script: docker build -t ${COMPONENT} .
+      displayName: 'Docker build ${COMPONENT} image'
 
 - stage: DockerUpload
   condition: succeeded()
